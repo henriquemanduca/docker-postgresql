@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  postgresql:
+    container_name: postgresql15
+    image: postgres:15.4-bookworm
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - /home/USER/database/postgresql/:/var/lib/postgresql/data
